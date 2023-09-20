@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Getting Started: Serving Web Content</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link th:href="@{/css/site.css}" rel="stylesheet" />
+  <div th:insert="blocks/header" ></div>
+</head>
+<body>
+<div class=ex1><h1>Информация об авторе</h1></div>
+<table  border="1" class="styled-table">
+  <tr>
+    <th>Возраст</th>
+    <th>Биография</th>
+  </tr> <!--ряд с ячейками заголовков-->
+  <tr th:each="el : ${authorDetails}">
+    <td th:text="${el.age}"></td>
+    <td th:text="${el.biography}"></td>
+
+
+
+    </div>
+    <td><a th:href="'/manager/authorDetails/' + ${el.id} + '/edit'" class="edit">Редактировать</a></td>
+    <td><a th:href="'/manager/authorDetails/' + ${el.id} + '/remove'" class="delete">Удалить</a></td>
+  </tr>
+
+</table>
+<p></p>
+<center><a href="/manager/authorDetails/add" class="button7">Создать</a></center>
+<br>
+</body>
+<footer>
+  <div th:insert="blocks/footer" ></div>
+</footer>
+</html>

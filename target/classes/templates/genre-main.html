@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href="@{/css/site.css}" rel="stylesheet" />
+    <div th:insert="blocks/header" ></div>
+</head>
+<body>
+<div class=ex1><h1>Жанры</h1></div>
+<table  border="1" class="styled-table">
+    <tr>
+        <th>Название жанра</th>
+    </tr> <!--ряд с ячейками заголовков-->
+    <tr th:each="el : ${genres}">
+        <td th:text="${el.genreName}"></td>
+
+
+
+        </div>
+        <td><a th:href="'/manager/genre/' + ${el.id} + '/edit'" class="edit">Редактировать</a></td>
+        <td><a th:href="'/manager/genre/' + ${el.id} + '/remove'" class="delete">Удалить</a></td>
+    </tr>
+
+</table>
+<p></p>
+<center><a href="/manager/genre/add" class="button7">Создать</a></center>
+<br>
+</body>
+<footer>
+    <div th:insert="blocks/footer" ></div>
+</footer>
+</html>

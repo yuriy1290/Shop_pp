@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Getting Started: Serving Web Content</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link th:href="@{/css/site.css}" rel="stylesheet" />
+  <div th:insert="blocks/header" ></div>
+</head>
+<body>
+<div class=ex1><h1>Добавление жанра</h1></div>
+<form th:action="${'/manager/genre/add'}" method="post" th:object="${genre}">
+  <table border="1" class="styled-table">
+    <tr>
+      <th>Название жанра</th>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="genreName" placeholder="Введите жанр" >
+        <div style="color: red" th:if="${#fields.hasErrors('genreName')}" th:errors="*{genreName}"/>
+      </td>
+
+    </tr>
+
+  </table>
+  <div align="center"><button type="submit" class="green">Добавить жанр</button></div>
+</form>
+</body>
+</html>

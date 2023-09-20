@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href="@{/css/site.css}" rel="stylesheet" />
+    <div th:insert="blocks/header" ></div>
+</head>
+<body>
+<div class=ex1><h1>Добавление информации</h1></div>
+<form th:action="${'/manager/publisherDetails/add'}" method="post" th:object="${publisherDetails}">
+    <table border="1" class="styled-table">
+        <tr>
+            <th>Информация</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="information" placeholder="Введите информацию" >
+                <div style="color: red" th:if="${#fields.hasErrors('information')}" th:errors="*{information}"/>
+            </td>
+
+        </tr>
+
+    </table>
+    <div align="center"><button type="submit" class="green">Добавить информацию</button></div>
+</form>
+</body>
+</html>
