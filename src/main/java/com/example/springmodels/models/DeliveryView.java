@@ -5,7 +5,7 @@ import javax.validation.constraints.*;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 @Entity
-@Table(name = "delivery_view")
+@Table(name = "deliveryView")
 public class DeliveryView {
 
 
@@ -15,7 +15,7 @@ public class DeliveryView {
         @NotBlank(message = "Введите название вида")
         private String name;
 
-        @OneToOne(mappedBy = "delivery_view")
+        @OneToOne(mappedBy = "deliveryView")
         private Delivery delivery;
 
     public DeliveryView() {

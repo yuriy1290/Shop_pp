@@ -15,7 +15,7 @@ public class Contacts {
     private String contact;
 
     @OneToOne(optional = true, cascade = CascadeType.ALL)
-    @JoinColumn(name = "contact_view_id")
+    @JoinColumn(name = "contactView_id")
     private ContactView contactView;
     @ManyToOne
     private Company company;

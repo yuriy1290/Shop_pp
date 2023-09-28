@@ -13,7 +13,7 @@ public class Delivery {
     @NotBlank(message = "Введите адрес")
     private String adress;
     @OneToOne(optional = true, cascade = CascadeType.ALL)
-    @JoinColumn(name = "delivery_view_id")
+    @JoinColumn(name = "deliveryView_id")
     private DeliveryView deliveryView;
 
     @OneToOne(mappedBy = "delivery")

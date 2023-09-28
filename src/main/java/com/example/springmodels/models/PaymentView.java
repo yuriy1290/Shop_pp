@@ -6,7 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 @Entity
-@Table(name = "payment_view")
+@Table(name = "paymentView")
 public class PaymentView {
 
         @Id
@@ -15,7 +15,7 @@ public class PaymentView {
         @NotBlank(message = "Введите название вида")
         private String name;
 
-        @OneToOne(mappedBy = "payment_view")
+        @OneToOne(mappedBy = "paymentView")
         private Payment payment;
 
     public PaymentView() {

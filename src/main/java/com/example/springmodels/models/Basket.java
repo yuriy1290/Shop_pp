@@ -19,15 +19,10 @@ public class Basket {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToMany
-    @JoinTable(
-            name = "basket_product",
-            joinColumns = @JoinColumn(name = "basket_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id")
-    )
-    private List<Product> products;
+    @OneToMany(mappedBy = "basket")
+    private List<BasketProduct> basketProducts;
 
-    @OneToOne(mappedBy = "basket_product")
+    @OneToOne(mappedBy = "basket")
     private Order order;
 
     public Basket() {
@@ -64,12 +59,12 @@ public class Basket {
         this.user = user;
     }
 
-    public List<Product> getProducts() {
-        return products;
+    public List<BasketProduct> getBasketProducts() {
+        return basketProducts;
     }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
+    public void setBasketProducts(List<BasketProduct> basketProducts) {
+        this.basketProducts = basketProducts;
     }
 
     public Order getOrder() {

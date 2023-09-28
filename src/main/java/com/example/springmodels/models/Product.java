@@ -27,12 +27,13 @@ public class Product {
     @NotBlank(message = "Введите цену")
     private float price;
     @OneToOne(optional = true, cascade = CascadeType.ALL)
-    @JoinColumn(name = "product_view_id")
+    @JoinColumn(name = "productView_id")
     private ProductView productView;
 
-    @ManyToMany(mappedBy = "product")
-    private List<Basket> baskets;
 
+
+    @OneToMany(mappedBy = "product")
+    private List<BasketProduct> basketProducts;
     public Product() {
     }
 
@@ -93,11 +94,11 @@ public class Product {
         this.productView = productView;
     }
 
-    public List<Basket> getBaskets() {
-        return baskets;
+    public List<BasketProduct> getBasketProducts() {
+        return basketProducts;
     }
 
-    public void setBaskets(List<Basket> baskets) {
-        this.baskets = baskets;
+    public void setBasketProducts(List<BasketProduct> basketProducts) {
+        this.basketProducts = basketProducts;
     }
 }

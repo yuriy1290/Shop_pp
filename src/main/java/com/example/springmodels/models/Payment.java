@@ -14,7 +14,7 @@ public class Payment {
     @NotBlank(message = "Итог:")
     private float paymentSum;
     @OneToOne(optional = true, cascade = CascadeType.ALL)
-    @JoinColumn(name = "payment_view_id")
+    @JoinColumn(name = "paymentView_id")
     private PaymentView paymentView;
     @OneToOne(mappedBy = "payment")
     private Order order;

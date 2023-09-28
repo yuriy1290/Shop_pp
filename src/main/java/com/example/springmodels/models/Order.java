@@ -18,19 +18,19 @@ public class Order {
     @JoinColumn(name = "delivery_id")
     private Delivery delivery;
     @OneToOne(optional = true, cascade = CascadeType.ALL)
-    @JoinColumn(name = "basket_product_id")
-    private Product products;
+    @JoinColumn(name = "basket_id")
+    private Basket basket;
     @OneToOne(mappedBy = "order")
     private Feedback feedback;
 
     public Order() {
     }
 
-    public Order(Long id, Payment payment, Delivery delivery, Product products, Feedback feedback) {
+    public Order(Long id, Payment payment, Delivery delivery, Basket basket, Feedback feedback) {
         this.id = id;
         this.payment = payment;
         this.delivery = delivery;
-        this.products = products;
+        this.basket = basket;
         this.feedback = feedback;
     }
 
@@ -58,12 +58,12 @@ public class Order {
         this.delivery = delivery;
     }
 
-    public Product getProducts() {
-        return products;
+    public Basket getBasket() {
+        return basket;
     }
 
-    public void setProducts(Product products) {
-        this.products = products;
+    public void setBasket(Basket basket) {
+        this.basket = basket;
     }
 
     public Feedback getFeedback() {

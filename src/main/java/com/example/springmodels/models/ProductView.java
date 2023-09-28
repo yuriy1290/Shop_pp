@@ -5,7 +5,7 @@ import javax.validation.constraints.*;
 
 
 @Entity
-@Table(name = "product_view")
+@Table(name = "productView")
 public class ProductView {
 
 
@@ -15,7 +15,7 @@ public class ProductView {
         @NotBlank(message = "Введите название вида")
         private String name;
 
-        @OneToOne(mappedBy = "product_view")
+        @OneToOne(mappedBy = "productView")
         private Product product;
 
     public ProductView() {

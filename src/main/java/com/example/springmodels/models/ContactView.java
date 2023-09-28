@@ -3,7 +3,7 @@ package com.example.springmodels.models;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 @Entity
-@Table(name = "contact_view")
+@Table(name = "contactView")
 public class ContactView {
 
         @Id
@@ -12,7 +12,7 @@ public class ContactView {
         @NotBlank(message = "Введите название вида")
         private String name;
 
-        @OneToOne(mappedBy = "contact_view")
+        @OneToOne(mappedBy = "contactView")
         private Contacts contacts;
 
     public ContactView() {
