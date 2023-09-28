@@ -2,8 +2,10 @@ package com.example.springmodels.models;
 
 import org.springframework.security.core.GrantedAuthority;
 
-public enum roleEnum implements GrantedAuthority {
-    USER, ADMIN, MANAGER;
+import javax.persistence.*;
+import javax.validation.constraints.*;
+public enum Role implements GrantedAuthority {
+    USER, ADMIN;
     @Override
     public String getAuthority()
     {
